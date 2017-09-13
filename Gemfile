@@ -15,7 +15,7 @@ group :production do
 end
 
 # Active Model Serializers more info at https://github.com/rails-api/active_model_serializers
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', require: true
 # devise more info at https://github.com/plataformatec/devise
 gem 'devise'
 # bootstrap more info at https://github.com/twbs/bootstrap-rubygem
