@@ -14,6 +14,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Active Model Serializers more info at https://github.com/rails-api/active_model_serializers
+gem 'active_model_serializers', require: true
+# devise more info at https://github.com/plataformatec/devise
+gem 'devise'
 # bootstrap more info at https://github.com/twbs/bootstrap-rubygem
 gem 'bootstrap-sass'
 # figaro more info at https://github.com/laserlemon/figaro
