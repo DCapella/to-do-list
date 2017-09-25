@@ -12,4 +12,10 @@ class ApiController < ApplicationController
       end
     end
   end
+
+  def user_find
+    authenticate_or_request_with_http_basic do |email|
+      user = User.find_by_email(email)
+    end
+  end
 end
