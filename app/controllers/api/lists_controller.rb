@@ -12,6 +12,16 @@ class Api::ListsController < ApiController
     end
   end
 
+  def destroy
+    begin
+      list = list_find
+      list.destroy
+      render json: {}, status: :no_content
+    rescue
+      render :json => {}, :status => :not_found
+    end
+  end
+
   private
   def list_params
     params.require(:list).permit(:title, :private)
