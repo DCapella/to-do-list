@@ -16,6 +16,16 @@ class Api::UsersController < ApiController
     end
   end
 
+  def destroy
+    begin
+      user = user_find
+      user.destroy
+      render json: {}, status: :no_content
+    rescue
+      render :json => {}, :status => :not_found
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
