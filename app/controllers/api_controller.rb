@@ -25,4 +25,12 @@ class ApiController < ApplicationController
       list = user.lists.first
     end
   end
+
+  def item_find
+    authenticate_or_request_with_http_basic do |email|
+      user = User.find_by_email(email)
+      list = user.lists.first
+      item = list.items.first
+    end
+  end
 end
